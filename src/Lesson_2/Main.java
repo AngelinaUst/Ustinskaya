@@ -2,20 +2,40 @@ package Lesson_2;
 
 public class Main {
     public static void main(String[] args) {
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
         int a = 7;
         int b = 5;
-        checkNumbers(a, b);
-        number(a);
-        numberLogic(a);
-        lineNumber("Строчка и точка.", 5);
         int year = 1995;
-        leapYear(year);
-        changeArray();
-        newArray();
+        System.out.println("Задача 1:");
+        printThreeWords();
+        System.out.println("Задача 2:");
+        checkSumSign();
+        System.out.println("Задача 3:");
+        printColor();
+        System.out.println("Задача 4:");
+        compareNumbers();
+        System.out.println("Задача 5:");
+        System.out.println(checkNumbers(a, b));
+        System.out.println("Задача 6:");
+        number(a);
+        System.out.println("Задача 7:");
+        System.out.println(numberLogic(a));
+        System.out.println("Задача 8:");
+        lineNumber("Строчка и точка.", 5);
+        System.out.println("Задача 9:");
+        System.out.println(leapYear(year));
+        System.out.println("Задача 10:");
+        createArray();
+        System.out.println("Задача 11:");
+        newArrayHundred();
+        System.out.println("Задача 12:");
+        arrayMultiply();
+        System.out.println("Задача 13:");
+        tableArray();
+        System.out.println("Задача 14:");
+        int[] arr = generateArray(5,5);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 
     public static void printThreeWords() {
@@ -97,7 +117,7 @@ public class Main {
         }
     }
 
-    public static void changeArray() {
+    public static void createArray() {
         int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 1) {
@@ -105,13 +125,47 @@ public class Main {
             } else {
                 arr[i] = 1;
             }
+            System.out.print(arr[i] + " ");
         }
+        System.out.println();
     }
 
-    public static void newArray() {
+    public static void newArrayHundred() {
         int[] arr = new int[100];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i + 1;
+            System.out.print(arr[i] + " ");
         }
+        System.out.println();
+    }
+    public static void arrayMultiply() {
+        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 6) {
+                arr[i] *= 2;
+            }
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+    public static void tableArray() {
+        int[][] table = new int[10][10];
+        for (int i = 0; i < table.length; i++) {
+                table[i][i] = 1;
+                table[i][table.length - i - 1] = 1;
+        }
+        for (int i = 0; i < table.length; i++) {
+            for (int j = 0; j < table.length; j++) {
+                System.out.print(table[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    public static int[] generateArray(int len, int initialValue) {
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = initialValue;
+        }
+        return arr;
     }
 }
